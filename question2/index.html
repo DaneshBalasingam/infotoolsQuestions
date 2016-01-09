@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+		<meta charset="utf-8">
+		
+		<title>Check tags</title>
+
+		
+	</head>
+	
+	<body>
+		<h1>Test Check Tags</h1>
+
+
+	<script type="text/javascript" src="checkTags.js"></script>
+	<script type="text/javascript">
+		
+		//Test
+		str1 = "The following text<C><B>is centred and in boldface</B></C>"; 
+		str2 = "<B>This <\g>is <B>boldface</B> in <<*> a</B> <\6> <<d>sentence";
+		str3 = "<B><C> This should be centred and in boldface, but the tags are wrongly nested </B></C>";
+		str4 = "<B>This should be in boldface, but there is an extra closing tag</B></C>";
+		str5 = "<B><C>This should be centred and in boldface, but there is a missing closing tag</C>";
+		str6 = "<title><b> THIS FILE </b> USES CORRECTLY NESTED TAGS </title> <h1><i> First <b class='c1'>" + 
+		        "header </b> text <img src='pic.jpg' /> </i></h1> <p id='par1'> Some other text </p>";
+		str7 = "<title> <b> THIS FILE </title> IS </b> NOT NESTED CORRECTLY.<p> <b> some text is not nested correctly</b>"
+
+		console.log(checkTags(str1));
+		console.log(checkTags(str2));
+		console.log(checkTags(str3));
+		console.log(checkTags(str4));
+		console.log(checkTags(str5));
+		console.log(checkTags(str6));
+		console.log(checkTags(str7));
+
+	</script>
+ 
+	</body>
+</html>
